@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dldg81mvwfko3"
+path="res://.godot/imported/electricity_mesh_simple.obj-6dd9752003cccd6cf51dd71ef0b028a4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/electricity_mesh_simple.obj-6dd9752003cccd6cf51dd71ef0b028a4.mesh"]
+
+source_file="res://Electrcity Arc/electricity_mesh_simple.obj"
+dest_files=["res://.godot/imported/electricity_mesh_simple.obj-6dd9752003cccd6cf51dd71ef0b028a4.mesh", "res://.godot/imported/electricity_mesh_simple.obj-6dd9752003cccd6cf51dd71ef0b028a4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
