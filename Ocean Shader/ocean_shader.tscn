@@ -2,10 +2,10 @@
 
 [ext_resource type="Shader" uid="uid://csooqeoup1u3f" path="res://Ocean Shader/ocean_shader_3.gdshader" id="1_r61tn"]
 [ext_resource type="Shader" uid="uid://bs1tv7prcaubq" path="res://Ocean Shader/ocean_shader_2.gdshader" id="2_at1k4"]
-[ext_resource type="Texture2D" uid="uid://ct5lp0k7t55il" path="res://Ocean Shader/Caustic.png" id="3_docn5"]
-[ext_resource type="Texture2D" uid="uid://diowdvpenppmr" path="res://Ocean Shader/Water_N_A.png" id="4_nd287"]
-[ext_resource type="Texture2D" uid="uid://bhgwdfmnb1pkv" path="res://Ocean Shader/Water_N_B.png" id="5_tn7bl"]
-[ext_resource type="Texture2D" uid="uid://byqoq3cttkes7" path="res://Ocean Shader/Water_UV.png" id="6_r0ke1"]
+[ext_resource type="Texture2D" uid="uid://b8duqpu0y5s0d" path="res://Ocean Shader/Caustic.png" id="3_docn5"]
+[ext_resource type="Texture2D" uid="uid://dvamfsthmrlk" path="res://Ocean Shader/Water_N_A.png" id="4_nd287"]
+[ext_resource type="Texture2D" uid="uid://uofmo171pebp" path="res://Ocean Shader/Water_N_B.png" id="5_tn7bl"]
+[ext_resource type="Texture2D" uid="uid://bl6pwfyuwq1ts" path="res://Ocean Shader/Water_UV.png" id="6_r0ke1"]
 [ext_resource type="Shader" uid="uid://c34knfatfu6w7" path="res://Ocean Shader/Ocean.gdshader" id="7_cijdu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oxibd"]
