@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://fr6ecx55vhev"]
+
+[ext_resource type="Script" uid="uid://bffhd1fbeagi8" path="res://ProgressBar.gd" id="1_74po2"]
+[ext_resource type="Shader" uid="uid://dcwxxhfbieyfc" path="res://ProgressbarHP.gdshader" id="1_b8dvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1k2x"]
+render_priority = 0
+shader = ExtResource("1_b8dvr")
+shader_parameter/bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+shader_parameter/uv_scale = 1.0
+shader_parameter/percentage = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_1_speed = -1.0
+shader_parameter/wave_2_speed = 1.0
+shader_parameter/wave_1_freq = 1.2
+shader_parameter/wave_2_freq = 1.0
+shader_parameter/wave_1_amp = 0.015
+shader_parameter/wave_2_amp = 0.01
+shader_parameter/sun_dir = Vector3(-0.2, 0.4, 1)
+shader_parameter/water_colour = Color(0.650247, 0, 0.247956, 1)
+shader_parameter/foam_colour = Color(0.905207, 0.589368, 0.386031, 1)
+shader_parameter/sky_colour = Color(0.997156, 0.217128, 0.439621, 1)
+shader_parameter/specular_colour = Color(0.145536, 0.0955159, 0.106806, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6udca"]
+material = SubResource("ShaderMaterial_i1k2x")
+size = Vector2(1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kihws"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u37ue"]
+material = SubResource("StandardMaterial3D_kihws")
+size = Vector2(10, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0998126, 0.693239)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_74po2")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 287.0
+offset_right = 638.0
+offset_bottom = 450.0
+scale = Vector2(1.4, 1.44)
+
+[node name="Health" type="Label" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "HP: 100/100"
+horizontal_alignment = 1
+
+[node name="HealthMesh" type="MeshInstance3D" parent="CanvasLayer/Control/MarginContainer/Health"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00508833, 0)
+mesh = SubResource("QuadMesh_6udca")
+skeleton = NodePath("../../../../..")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MonsterAttack" type="Button" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 413.0
+offset_top = 146.0
+offset_right = 748.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 32
+text = "The Monster Attacks!"
+
+[node name="GameOver" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 405.0
+offset_top = 420.0
+offset_right = 766.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER!"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.457778)
+mesh = SubResource("PlaneMesh_u37ue")

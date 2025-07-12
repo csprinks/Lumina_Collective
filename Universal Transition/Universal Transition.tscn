@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjrxx2rbul6by"]
+
+[ext_resource type="Texture2D" uid="uid://dh36pkleimetp" path="res://Universal Transition/Monster.png" id="1_x1uup"]
+[ext_resource type="Shader" uid="uid://m0wcagbdcr11" path="res://Universal Transition/Transition.gdshader" id="2_7jh56"]
+[ext_resource type="Texture2D" uid="uid://c7gw0g7h1c6is" path="res://Universal Transition/Black Tile.png" id="3_7glwv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jup3e"]
+shader = ExtResource("2_7jh56")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 3
+shader_parameter/invert = false
+shader_parameter/from_center = true
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 1.6600000000034925
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 6
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.5
+shader_parameter/progress_bias = Vector2(0, 0)
+shader_parameter/enable_flash = false
+shader_parameter/flash_color1 = Color(1, 1, 1, 1)
+shader_parameter/flash_color2 = Color(1, 0.5, 0, 1)
+shader_parameter/flash_frequency = 2.0
+shader_parameter/flash_intensity = 0.5
+shader_parameter/flash_duration = 0.5
+shader_parameter/use_flash_alpha = true
+shader_parameter/enable_shake = false
+shader_parameter/shake_intensity = 1.0
+shader_parameter/shake_frequency = 1.0
+shader_parameter/shake_direction = Vector2(1, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_x1uup")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_jup3e")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_7glwv")

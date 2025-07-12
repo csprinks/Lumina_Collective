@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg6r4xjew2l7a"]
+
+[ext_resource type="Shader" uid="uid://cb5nk0v7a7t1o" path="res://Double Sided Transparent Gradient/Double_Sided_Transparent_Gradient.gdshader" id="1_edel7"]
+[ext_resource type="Texture2D" uid="uid://beaj5ldt8crfa" path="res://Double Sided Transparent Gradient/deadly-strike.png" id="2_mjwgw"]
+[ext_resource type="Texture2D" uid="uid://7auxvwggswso" path="res://Double Sided Transparent Gradient/dice-fire.png" id="3_3bm6o"]
+[ext_resource type="Texture2D" uid="uid://e7looqsj8116" path="res://Double Sided Transparent Gradient/potion.png" id="4_7ebla"]
+[ext_resource type="Texture2D" uid="uid://cpxxmu5jellf5" path="res://Double Sided Transparent Gradient/spinning-sword.png" id="5_a5lom"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74psc"]
+shader = ExtResource("1_edel7")
+shader_parameter/divide = 0.055000000007566996
+shader_parameter/blur = 0.2900000000081491
+shader_parameter/fade_width = 0.9150000000081491
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_74psc")
+layout_mode = 0
+anchor_right = 0.22222222
+anchor_bottom = 0.09876543
+offset_right = -216.0
+offset_bottom = -24.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(256, 64)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_mjwgw")
+
+[node name="TextureRect2" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_3bm6o")
+
+[node name="TextureRect3" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_7ebla")
+
+[node name="TextureRect4" type="TextureRect" parent="SubViewportContainer/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_a5lom")

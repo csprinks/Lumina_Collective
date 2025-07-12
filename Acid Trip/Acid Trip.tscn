@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu8jr27rrxwrg"]
+
+[ext_resource type="Shader" uid="uid://x25h5r8dsyfb" path="res://Acid Trip/Acid_Trip.gdshader" id="1_rxcw2"]
+[ext_resource type="Texture2D" uid="uid://bcilnr3istvow" path="res://Rolling Battle Text/Enemy.png" id="2_rock6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8vo2u"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vakwd"]
+noise = SubResource("FastNoiseLite_8vo2u")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_li8aa"]
+shader = ExtResource("1_rxcw2")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_vakwd")
+shader_parameter/radius = 0.44700002123250004
+shader_parameter/effectControl = 0.4610000218975
+shader_parameter/warpSpeed = 0.19200005661999997
+shader_parameter/shape = 0.0
+shader_parameter/warpStrength = 0.0610000028975
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_li8aa")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 413.0
+offset_top = 168.0
+offset_right = 669.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rock6")

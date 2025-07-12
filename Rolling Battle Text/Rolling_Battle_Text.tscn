@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://g3u87s7abwnv"]
+
+[ext_resource type="Script" uid="uid://ccvd5v2am04sj" path="res://Rolling Battle Text/rolling_battle_text.gd" id="1_50ig4"]
+[ext_resource type="FontFile" uid="uid://dnjtgd8n5f1ct" path="res://Rolling Battle Text/alagard.ttf" id="2_mugor"]
+[ext_resource type="Texture2D" uid="uid://bcilnr3istvow" path="res://Rolling Battle Text/Enemy.png" id="3_cwofb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_50ig4")
+font_size = 48
+font = ExtResource("2_mugor")
+digit_spacing = 0.10000000000582077
+display_time = 1.5
+outline_size = 10
+outline_color = Color(0.3650379, 0.5226894, 0.8472856, 1)
+bottom_margin = 200
+bounce_height = 150.0
+bounce_duration = 0.1999999999970896
+bounce_count = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cwofb")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
