@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f1ep1plka77"
-path="res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"
+uid="uid://c42583mlhsheb"
+path="res://.godot/imported/Foam.png-7d2450b0608d12ef03394de207df5b2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Double Sided Transparent Gradient/deadly-strike.png"
-dest_files=["res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"]
+source_file="res://Ocean Shader/Foam.png"
+dest_files=["res://.godot/imported/Foam.png-7d2450b0608d12ef03394de207df5b2f.ctex"]
 
 [params]
 

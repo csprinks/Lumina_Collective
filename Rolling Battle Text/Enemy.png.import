@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f1ep1plka77"
-path="res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"
+uid="uid://b6tolc6suc4td"
+path="res://.godot/imported/Enemy.png-9379cef6d05de281fd1e474d8d0f69c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Double Sided Transparent Gradient/deadly-strike.png"
-dest_files=["res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"]
+source_file="res://Rolling Battle Text/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-9379cef6d05de281fd1e474d8d0f69c7.ctex"]
 
 [params]
 

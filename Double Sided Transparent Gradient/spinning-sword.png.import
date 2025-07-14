@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f1ep1plka77"
-path="res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"
+uid="uid://djf7qqymaayao"
+path="res://.godot/imported/spinning-sword.png-c2efa879e99adc589ca77f49982897e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Double Sided Transparent Gradient/deadly-strike.png"
-dest_files=["res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"]
+source_file="res://Double Sided Transparent Gradient/spinning-sword.png"
+dest_files=["res://.godot/imported/spinning-sword.png-c2efa879e99adc589ca77f49982897e7.ctex"]
 
 [params]
 

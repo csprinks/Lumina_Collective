@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f1ep1plka77"
-path="res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"
+uid="uid://6skrq7bekbhj"
+path="res://.godot/imported/Monster.png-c8ded472fae52487998872d8d6c222db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Double Sided Transparent Gradient/deadly-strike.png"
-dest_files=["res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"]
+source_file="res://Universal Transition/Monster.png"
+dest_files=["res://.godot/imported/Monster.png-c8ded472fae52487998872d8d6c222db.ctex"]
 
 [params]
 

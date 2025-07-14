@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f1ep1plka77"
-path="res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"
+uid="uid://d2ggvj6w4seds"
+path="res://.godot/imported/dice-fire.png-9a1916ee03f24b4679c74de95cd0c7d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Double Sided Transparent Gradient/deadly-strike.png"
-dest_files=["res://.godot/imported/deadly-strike.png-0768113b7e6491d250a1f906bc6926ae.ctex"]
+source_file="res://Double Sided Transparent Gradient/dice-fire.png"
+dest_files=["res://.godot/imported/dice-fire.png-9a1916ee03f24b4679c74de95cd0c7d4.ctex"]
 
 [params]
 
