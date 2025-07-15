@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=4 uid="uid://n8loxfeu30h0"]
+
+[ext_resource type="Shader" uid="uid://b2j73uomdxl0n" path="res://Electricity/Electrcity Arc/electricity_arc.tres" id="1_jkm1j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jq1n"]
+render_priority = 0
+shader = ExtResource("1_jkm1j")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3sbwx"]
+_surfaces = [{
+"aabb": AABB(-3.068156, -0.335733, -3.159841, 6.36314, 18.852247, 2.7974992),
+"attribute_data": PackedByteArray("AAAAAAAAMg7//wAA//8yDgAAQR3//0EdAABQLP//UCwAAF87//9fOwAAbkr//25KAAB9Wf//fVkAAIxo//+MaAAAm3f//5t3AACqhv//qoYAALmV//+5lQAAyKT//8ikAADXs///17MAAObC///mwgAA9dH///XRAAAE4f//BOEAABPw//8T8AAA////////"),
+"format": 34896613399,
+"index_count": 102,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMAAwAEAAUABAAGAAUABQAGAAcABgAIAAcABwAIAAkACAAKAAkACQAKAAsACgAMAAsACwAMAA0ADAAOAA0ADQAOAA8ADgAQAA8ADwAQABEAEAASABEAEQASABMAEgAUABMAEwAUABUAFAAWABUAFQAWABcAFgAYABcAFwAYABkAGAAaABkAGQAaABsAGgAcABsAGwAcAB0AHAAeAB0AHQAeAB8AHgAgAB8AHwAgACEAIAAiACEAIQAiACMA"),
+"material": SubResource("ShaderMaterial_0jq1n"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("vrwAAMuCHX7zsLIHW4VufFTsFgDhght+c+R/BwmFdn04cBIXVJPveO7PwRK9iiF52AqaLROtRXQgmwcljJsEeAAAxz1hxNJ09X/PPGfEmnSXL49N//+hcsyYZkyCtwBvXHmMWYPfo26g1P9WumNkZS6kRGNOia9m//9kYAAArGj8qtpsAYByaH/4z2oXE6Zo5472d6m+SmzX3pR1nk2kZwVQMIQi9/V2/rMkhF2ib242JGmTVOGJd5SWs5WWzdh2rVBYqcPid3aFrzqwraAgcpOPHsdLr75v99I+v+RnGWibo1vWJnluZw3hRdAeMy1pAq5D5rRXTGqc6MHljwyjamyuCPU4TuRqZOgI9TsD52psrv//OE7tamTo//87A+1q5gGmcKUcFmwUEnx9uDqwe+xKTm9FU11zWjyGeLpKN3E4LHVu+iWmaeUyDFaia9YkxW++HtWx2y7kptwnJobiEmZu/yLud3kXdGplK8ldsjTGnU4acGQnG2yq5Rb6t9sQub4vDS2gEBOKmH4xXaWdQ9KlgUGGoRU2bJtcJfOWqRRGingJXoloB/9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+
+[node name="ElectricityArc" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3sbwx")

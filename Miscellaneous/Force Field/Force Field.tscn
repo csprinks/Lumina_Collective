@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2mrxlphwc4f6"]
+
+[ext_resource type="Shader" uid="uid://serlm232ld5c" path="res://Miscellaneous/Force Field/Force Field.gdshader" id="1_mgmlg"]
+[ext_resource type="Texture2D" uid="uid://bl6pwfyuwq1ts" path="res://Water/Ocean Shader/Water_UV.png" id="2_tu8in"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_474o0"]
+
+[sub_resource type="Gradient" id="Gradient_2tj56"]
+offsets = PackedFloat32Array(0, 0.6465517, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.9714511, 0.4574623, 0.5524043, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q65n5"]
+noise_type = 5
+frequency = 0.0165
+fractal_type = 3
+fractal_octaves = 1
+fractal_lacunarity = 1.83
+fractal_gain = -2.265
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r72x0"]
+noise = SubResource("FastNoiseLite_q65n5")
+color_ramp = SubResource("Gradient_2tj56")
+seamless = true
+as_normal_map = true
+bump_strength = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkqtx"]
+render_priority = 0
+shader = ExtResource("1_mgmlg")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_r72x0")
+shader_parameter/normal_map = ExtResource("2_tu8in")
+shader_parameter/time_speed = 4.2930002039175
+shader_parameter/color1 = Color(0.99999994, 0.20087251, 0.5674112, 1)
+shader_parameter/color2 = Color(0.19445217, 0.46824455, 0.87587523, 1)
+shader_parameter/distortion_strength = 0.5610000266475
+shader_parameter/alpha_power = 2.5
+shader_parameter/emission_strength = 8.513000404367501
+shader_parameter/center_boost = 1.0
+shader_parameter/edge_fade = 2.9270001390325002
+shader_parameter/height_sharpness = 1.7380000792951202
+shader_parameter/overall_alpha = 0.7930000376675
+
+[node name="Force Field" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.02229461, 0, 0)
+mesh = SubResource("PlaneMesh_474o0")
+surface_material_override/0 = SubResource("ShaderMaterial_fkqtx")

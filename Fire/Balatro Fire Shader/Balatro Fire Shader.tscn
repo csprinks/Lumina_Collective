@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqmql2ebgyytu"]
+
+[ext_resource type="Shader" uid="uid://brnx8s16ol5sq" path="res://Fire/Balatro Fire Shader/Balatro Fire Shader.gdshader" id="1_msfme"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mf43u"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v0ujy"]
+noise = SubResource("FastNoiseLite_mf43u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6m5n"]
+shader = ExtResource("1_msfme")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_v0ujy")
+shader_parameter/bottom_color = Color(0.96331567, 0.4934031, 0.48215616, 1)
+shader_parameter/middle_color = Color(0.34664333, 0.7227744, 0.7863172, 1)
+shader_parameter/top_color = Color(0.3627919, 0.48260283, 0.9967615, 1)
+shader_parameter/fire_alpha = 1.0
+shader_parameter/fire_speed = Vector2(0, 2)
+shader_parameter/fire_aperture = 0.22
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Colorrect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m6m5n")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3888889
+anchor_top = 0.30246913
+anchor_right = 0.6111111
+anchor_bottom = 0.69753087
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

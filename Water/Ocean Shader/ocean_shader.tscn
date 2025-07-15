@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://ceasp0qoysawu"]
+
+[ext_resource type="Shader" uid="uid://csooqeoup1u3f" path="res://Water/Ocean Shader/ocean_shader_3.gdshader" id="1_r61tn"]
+[ext_resource type="Shader" uid="uid://bs1tv7prcaubq" path="res://Water/Ocean Shader/ocean_shader_2.gdshader" id="2_at1k4"]
+[ext_resource type="Texture2D" uid="uid://b8duqpu0y5s0d" path="res://Water/Ocean Shader/Caustic.png" id="3_docn5"]
+[ext_resource type="Texture2D" uid="uid://dvamfsthmrlk" path="res://Water/Ocean Shader/Water_N_A.png" id="4_nd287"]
+[ext_resource type="Texture2D" uid="uid://uofmo171pebp" path="res://Water/Ocean Shader/Water_N_B.png" id="5_tn7bl"]
+[ext_resource type="Texture2D" uid="uid://bl6pwfyuwq1ts" path="res://Water/Ocean Shader/Water_UV.png" id="6_r0ke1"]
+[ext_resource type="Shader" uid="uid://c34knfatfu6w7" path="res://Water/Ocean Shader/Ocean.gdshader" id="7_cijdu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oxibd"]
+size = Vector2(10, 10)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_phynp"]
+frequency = 0.0166
+offset = Vector3(161, -29, 0)
+fractal_type = 2
+domain_warp_enabled = true
+domain_warp_amplitude = 21.0
+domain_warp_fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u6tmj"]
+noise = SubResource("FastNoiseLite_phynp")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmvfh"]
+render_priority = -1
+shader = ExtResource("1_r61tn")
+shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_u6tmj")
+shader_parameter/uv_scale = 5.75
+shader_parameter/shallow_color = Color(0.309804, 0.407843, 0.658824, 1)
+shader_parameter/deep_color = Color(0.309804, 0.407843, 0.658824, 1)
+shader_parameter/depth_scale = 5.8
+shader_parameter/edge_scale = 0.5
+shader_parameter/time_scale = 3.75
+shader_parameter/normal_strength = 0.3
+shader_parameter/roughness = 0.49
+shader_parameter/color_ratio = 0.3
+shader_parameter/abberation_r = Vector2(0.345, 0.385)
+shader_parameter/abberation_g = Vector2(0.635, 0.32)
+shader_parameter/abberation_b = Vector2(0.465, 0.3)
+shader_parameter/highlights_time_scale = 0.3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iogye"]
+size = Vector2(10, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmodm"]
+render_priority = 0
+shader = ExtResource("2_at1k4")
+shader_parameter/wave_speed = 0.0070000003325
+shader_parameter/wave_a = Color(0.2658919, 0.4961065, 0.653748, 1)
+shader_parameter/wave_b = Color(0.49984533, 0.746143, 0.9150634, 1)
+shader_parameter/wave_c = Color(0.2512266, 0.46212402, 0.6102068, 0.9)
+shader_parameter/sampler_scale = Vector2(0.1, 0.1)
+shader_parameter/sampler_direction = Vector2(0.05, 0.05)
+shader_parameter/uv_sampler = ExtResource("6_r0ke1")
+shader_parameter/uv_sampler_scale = Vector2(0.1, 0.1)
+shader_parameter/uv_sampler_strength = 0.034000001615
+shader_parameter/normalmap_a_sampler = ExtResource("4_nd287")
+shader_parameter/normalmap_b_sampler = ExtResource("5_tn7bl")
+shader_parameter/foam_level = 0.1750000083125
+shader_parameter/refraction = 0.0230000010925
+shader_parameter/color_deep = Color(0.21686687, 0.43911216, 0.9832302, 1)
+shader_parameter/color_shallow = Color(0.554675, 0.6999403, 1, 1)
+shader_parameter/beers_law = 1.410000066975
+shader_parameter/depth_offset = -0.957999950505
+shader_parameter/projector = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/caustic_sampler = ExtResource("3_docn5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_idh1g"]
+size = Vector2(10, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hi4s4"]
+render_priority = 0
+shader = ExtResource("7_cijdu")
+shader_parameter/R = Vector3(0.93, 0.665, 0.595)
+shader_parameter/scale = 0.3200000000069849
+shader_parameter/speed = 0.35499999999592546
+shader_parameter/direction = Vector3(1, 1, 1)
+shader_parameter/distortion = 1.0
+shader_parameter/layers = 1.1450000000040743
+shader_parameter/shades = 1.6900000000023283
+shader_parameter/steps = 3
+shader_parameter/tint = Vector3(-0.166, 0.5, 0.805)
+shader_parameter/movement_speed = Vector3(0.1, 0.1, 0.1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ocean_Shader_3" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean_Shader_3"]
+process_priority = -1
+mesh = SubResource("PlaneMesh_oxibd")
+surface_material_override/0 = SubResource("ShaderMaterial_jmvfh")
+
+[node name="Ocean_Shader2" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean_Shader2"]
+mesh = SubResource("PlaneMesh_iogye")
+surface_material_override/0 = SubResource("ShaderMaterial_mmodm")
+
+[node name="Ocean_Shader" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean_Shader"]
+mesh = SubResource("PlaneMesh_idh1g")
+surface_material_override/0 = SubResource("ShaderMaterial_hi4s4")

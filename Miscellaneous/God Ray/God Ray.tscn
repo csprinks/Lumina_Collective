@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq6y8fue0m2lj"]
+
+[ext_resource type="Texture2D" uid="uid://b6tolc6suc4td" path="res://Text/Rolling Battle Text/Enemy.png" id="1_0pmk5"]
+[ext_resource type="Shader" uid="uid://bu5rxbertwcgb" path="res://Miscellaneous/God Ray/God Ray.gdshader" id="2_nqwfv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_atun3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e1gk2"]
+noise = SubResource("FastNoiseLite_atun3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fa07"]
+shader = ExtResource("2_nqwfv")
+shader_parameter/blend_mode = 0
+shader_parameter/noiseTex = SubResource("NoiseTexture2D_e1gk2")
+shader_parameter/angle = -0.29499999999825377
+shader_parameter/position = -0.22000000000116415
+shader_parameter/spread = 0.26000001235000003
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.057000002707500004
+shader_parameter/edge_fade = 0.2550000121125
+shader_parameter/speed = 2.2400000000052387
+shader_parameter/ray1_density = 7.0
+shader_parameter/ray2_density = 25.55000000000291
+shader_parameter/ray2_intensity = 1.0
+shader_parameter/ray_color = Color(0.87839437, 0.8591279, 0.7668158, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.25
+shader_parameter/pixelSizeScale = 1.0
+shader_parameter/quantize_colors = true
+shader_parameter/color_levels = 9
+shader_parameter/dither = false
+shader_parameter/dither_strength = 0.29200001387
+shader_parameter/opacity = 1.0
+
+[sub_resource type="Gradient" id="Gradient_lieyy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dbfoi"]
+gradient = SubResource("Gradient_lieyy")
+
+[node name="GodRay" type="Node2D"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("1_0pmk5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_7fa07")
+offset_right = 260.0
+offset_bottom = 263.0
+texture = SubResource("GradientTexture2D_dbfoi")

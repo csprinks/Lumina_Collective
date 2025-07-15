@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0cgqdhutklx"]
+
+[ext_resource type="Shader" uid="uid://df55ojth3j380" path="res://Pride Flag.gdshader" id="1_45o6s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dr23x"]
+render_priority = 0
+shader = ExtResource("1_45o6s")
+shader_parameter/flag_type = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_reuov"]
+material = SubResource("ShaderMaterial_dr23x")
+size = Vector2(3, 1)
+subdivide_width = 8
+
+[node name="PrideFlag" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_reuov")

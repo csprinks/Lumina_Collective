@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqwabcs8sd3jh"]
+
+[ext_resource type="Shader" uid="uid://btfuw38jv2q21" path="res://Miscellaneous/Portal Warp Circle/Portal Warp Circle.gdshader" id="1_6pxy0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_u0dac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56r10"]
+render_priority = 0
+shader = ExtResource("1_6pxy0")
+shader_parameter/portal_color = Color(0.62, 0.0124, 0.0124, 1)
+shader_parameter/speed = 1.864
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/num_particles = 100
+shader_parameter/portal_radius = 1.0
+shader_parameter/swirl_intensity = 2.0
+shader_parameter/swirl_frequency = 5.68
+
+[sub_resource type="QuadMesh" id="QuadMesh_uplqf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g11c6"]
+render_priority = 0
+shader = ExtResource("1_6pxy0")
+shader_parameter/portal_color = Color(0.716013, 0.294509, 0.283769, 1)
+shader_parameter/speed = 5.0
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/num_particles = 10
+shader_parameter/portal_radius = 1.0
+shader_parameter/swirl_intensity = 0.0
+shader_parameter/swirl_frequency = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ie67c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5eg26"]
+render_priority = 0
+shader = ExtResource("1_6pxy0")
+shader_parameter/portal_color = Color(0.713057, 0.329386, 0.17978, 1)
+shader_parameter/speed = 2.008
+shader_parameter/direction = Vector2(-1, -1)
+shader_parameter/num_particles = 10
+shader_parameter/portal_radius = 1.0
+shader_parameter/swirl_intensity = 0.0
+shader_parameter/swirl_frequency = 7.68
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0108195, 0, 0)
+mesh = SubResource("QuadMesh_u0dac")
+surface_material_override/0 = SubResource("ShaderMaterial_56r10")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00617874, 0, 0)
+mesh = SubResource("QuadMesh_uplqf")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("ShaderMaterial_g11c6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00617874, 0, 0)
+mesh = SubResource("QuadMesh_ie67c")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("ShaderMaterial_5eg26")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.975527)

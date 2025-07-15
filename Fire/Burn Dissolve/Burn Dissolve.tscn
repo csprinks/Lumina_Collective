@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgrhnacq0nofu"]
+
+[ext_resource type="Shader" uid="uid://dicni4vgvc2rx" path="res://Fire/Burn Dissolve/Burn Dissolve.gdshader" id="1_minkg"]
+[ext_resource type="Texture2D" uid="uid://b6tolc6suc4td" path="res://Text/Rolling Battle Text/Enemy.png" id="2_vjbrj"]
+
+[sub_resource type="Gradient" id="Gradient_a8ncv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4tpcg"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y373t"]
+noise = SubResource("FastNoiseLite_4tpcg")
+color_ramp = SubResource("Gradient_a8ncv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilatr"]
+shader = ExtResource("1_minkg")
+shader_parameter/progress = 0.2400000000052387
+shader_parameter/noiseForce = 0.7250000000058208
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_y373t")
+shader_parameter/burnColor = Color(0, 0, 0, 1)
+shader_parameter/borderWidth = 0.05999999999767169
+shader_parameter/direction = 141.94500000000698
+
+[node name="BurnDissolve" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ilatr")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3888889
+anchor_top = 0.30246913
+anchor_right = 0.6111111
+anchor_bottom = 0.69753087
+offset_left = 108.0
+offset_top = 108.0
+offset_right = -108.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vjbrj")
+metadata/_edit_use_anchors_ = true

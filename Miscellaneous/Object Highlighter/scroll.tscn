@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://y8s05ndf25sk"]
+
+[ext_resource type="PackedScene" uid="uid://dlkv0fu2mnvl6" path="res://Miscellaneous/Object Highlighter/Scroll/Scroll.glb" id="1_qvwec"]
+[ext_resource type="Shader" uid="uid://wpctfj6flxk1" path="res://Object Highlight.gdshader" id="2_mgo6j"]
+[ext_resource type="Texture2D" uid="uid://bjehmycntcix2" path="res://Miscellaneous/Object Highlighter/Scroll/Scroll_map scroll_BaseColor.jpg" id="3_rplvi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u01x"]
+render_priority = 0
+shader = ExtResource("2_mgo6j")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
+shader_parameter/shine_angle_x = 0.0
+shader_parameter/shine_angle_y = 0.0
+shader_parameter/shine_angle_z = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jlxc"]
+albedo_texture = ExtResource("3_rplvi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3qxg"]
+render_priority = 0
+shader = ExtResource("2_mgo6j")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 2.5
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 5.0
+shader_parameter/shine_angle_x = 0.0
+shader_parameter/shine_angle_y = 0.0
+shader_parameter/shine_angle_z = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2cia"]
+next_pass = SubResource("ShaderMaterial_w3qxg")
+albedo_texture = ExtResource("3_rplvi")
+
+[node name="Scroll" instance=ExtResource("1_qvwec")]
+
+[node name="Old map scroll" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_6u01x")
+material_overlay = SubResource("StandardMaterial3D_8jlxc")
+surface_material_override/0 = SubResource("StandardMaterial3D_s2cia")
